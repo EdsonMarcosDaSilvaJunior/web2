@@ -19,13 +19,13 @@
         }
         echo "Connected successfully";
 
-
-        $sql = "CREATE DATABASE myDB";
-        if ($conn->query($sql) === TRUE) {
-          echo "Database created successfully";
-        } else {
-          echo "Error creating database: " . $conn->error;
-        }
+        //Cria Banco de Dados
+        //$sql = "CREATE DATABASE myDB";
+        //if ($conn->query($sql) === TRUE) {
+        //  echo "Database created successfully" . "<br>";
+        //} else {
+        //  echo "Error creating database: " . $conn->error . "<br>";
+        //}
     ?>
 </body>
 </html>
