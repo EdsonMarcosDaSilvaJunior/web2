@@ -28,13 +28,26 @@
         //}
 
         //inserir valores
-        $sql = "INSERT INTO banco.pessoas(nome, idade) VALUES ('Edson', '25')";
+        //$sql = "INSERT INTO banco.pessoas(nome, idade) VALUES ('Edson', '25')";
 
-        if($conn->query($sql) === TRUE){
-            echo("Novo Registro inserido com sucesso!" . "<br>");
-        } else {
-            echo("Erro: ". $sql . "<br>" . $conn->error);
-        }
+        //if($conn->query($sql) === TRUE){
+        //    echo("Novo Registro inserido com sucesso!" . "<br>");
+        //} else {
+        //    echo("Erro: ". $sql . "<br>" . $conn->error);
+        //}
+
+
+        $sql = "SELECT * FROM banco.pessoas";
+        $resultado = $conn->query($sql);
+
+        if($resultado->num_rows > 0) {
+            while($row = $resultado->fetch_assoc()){
+                echo "id: " . $row["id"]. " - Nome: " . $row["nome"]. " - Idade: " . $row["idade"]. "<br>";
+            }
+          } else {
+            echo "0 results";
+          }
+            
 
         //Fecha o banco
         $conn->close()
