@@ -17,7 +17,7 @@
         if($conn->connect_error){
             die("Connection failed: ". $conn->connect_error);
         }
-        echo "Connected successfully";
+        echo "Connected successfully" . "<br>";
 
         //Cria Banco de Dados
         //$sql = "CREATE DATABASE myDB";
@@ -26,6 +26,18 @@
         //} else {
         //  echo "Error creating database: " . $conn->error . "<br>";
         //}
+
+        //inserir valores
+        $sql = "INSERT INTO banco.pessoas(nome, idade) VALUES ('Edson', '25')";
+
+        if($conn->query($sql) === TRUE){
+            echo("Novo Registro inserido com sucesso!" . "<br>");
+        } else {
+            echo("Erro: ". $sql . "<br>" . $conn->error);
+        }
+
+        //Fecha o banco
+        $conn->close()
     ?>
 </body>
 </html>
