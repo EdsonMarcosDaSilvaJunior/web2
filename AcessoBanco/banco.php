@@ -38,7 +38,7 @@
         //}
 
 
-        $sql = "SELECT * FROM banco.pessoas";
+        $sql = "SELECT * FROM banco.pessoas WHERE idade > 24";
         $resultado = $conn->query($sql);
 
         if($resultado->num_rows > 0) {
